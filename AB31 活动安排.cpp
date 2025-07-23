@@ -57,6 +57,12 @@ int main() {
 
     [](const array<int,2>& a, const array<int, 2>& b) {...}：匿名函数
 
+    等价写法：
+    bool compare(const array<int,2>& a, const array<int, 2>& b) {
+        return a[1] < b[1];
+    }
+    sort(v.begin(), v.end(), compare);
+
     参数：两个array<int,2>元素的常量引用
 
     返回值：bool类型，表示a是否应该排在b前面
