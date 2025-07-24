@@ -45,10 +45,24 @@ public:
         }
     }
 
+    void selectionSort(vector<int>& arr, int n){
+        for (int i = 0; i < n - 1; i++){
+            int min = arr[i], minj = i;
+            for (int j = i+1; j < n; j++){
+                if (arr[j] < min){
+                    min = arr[j];
+                    minj = j;
+                }
+            }
+            swap(arr[i], arr[minj]);
+        }
+    }
+
     vector<int> MySort(vector<int>& arr) {
         // write code here
         int n = arr.size();
-        mergeSort(arr, 0, n-1);
+        // mergeSort(arr, 0, n-1);
+        selectionSort(arr, n);
         return arr;
     }
 };
